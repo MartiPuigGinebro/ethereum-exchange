@@ -18,19 +18,18 @@ const LineChart = () => {
         const {data} = await axios.get("https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=eur&days=1&interval=hourly");
         setEthData(data);
     };
+
     useEffect(() => {
-        getData().then(() => getData(ethData),).catch(() => {
-            // TODO: handle error if data is not available
-            console.log("error");
-        });
+        getData();
     }, []);
 
     const data = useMemo(() => {
         return {
-            labels: ethData.prices.map(element => moment(element[0]).format("HH:mm")) || labels,
+            labels: /*ethData.prices.map(element => moment(element[0]).format("HH:mm")) ||*/ labels,
+
             datasets: [{
                 label: 'Ethereum',
-                data: ethData.prices.map(element => element[1]) || score,
+                data: /*ethData.prices.map(element => element[1]) ||*/ score,
                 borderColor: 'rgb(114,39,65)',
                 borderWidth: 2,
             },],
@@ -38,7 +37,9 @@ const LineChart = () => {
     }, [ethData]);
 
     const options = useMemo(() => ({
-        responsive: true, maintainAspectRatio: false, plugins: {
+        responsive: true, maintainAspectRatio: false,
+
+        plugins: {
             title: {
                 display: true, text: 'ETH Price', padding: {
                     top: 10, bottom: 30
@@ -48,13 +49,17 @@ const LineChart = () => {
             }, legend: {
                 display: false
             },
-        }, scales: {
+        },
+
+        scales: {
             x: {
                 display: false,
             }, y: {
                 display: false,
             },
-        }, interaction: {
+        },
+
+        interaction: {
             intersect: false, mode: 'index',
         },
     }), []);
