@@ -26,8 +26,7 @@ const TransactionCard = ({value, keyword, message, from, url, timestamp, to}) =>
                         <p className="text-white text-base">To: {shortenAddress(to)}</p>
                     </a>
                     <p className="text-white text-base">Amount: {value} ETH</p>
-                    {message && <p className="text-white text-base">Message: {message}</p>}
-
+                    {message && <p className="text-white text-base pt-6">Message: {message}</p>}
 
                 </div>
                 <img
