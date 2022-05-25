@@ -1,18 +1,16 @@
-/* Importación de la biblioteca ethers y el contrato ABI y dirección. */
 import React, {useEffect} from 'react';
 import {ethers} from 'ethers';
 
 import {contractABI, contractAddress} from '../utils/constants';
 
-/* Creación de un objeto de contexto que se puede usar para pasar datos a través del árbol de componentes sin tener que
-pasar accesorios manualmente en cada nivel. */
+/* Creación createContext, se puede usar para pasar datos a través del árbol de componentes sin tener que
+pasar params manualmente en cada nivel. */
 export const TransactionContext = React.createContext();
 
 const {ethereum} = window;
 
 /**
  * Devuelve una instancia del contrato que está conectado a la red Ethereum.
- * @returns un objeto de contrato.
  */
 const getEthereumContract = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
@@ -28,7 +26,7 @@ export const TransactionsProvider = ({children}) => {
     const [transactions, setTransactions] = React.useState([]);
 
     /**
-     * Cuando el usuario escribe en el campo de entrada, la función handleChange actualizará el estado de formData con el
+     * Cuando el usuario escribe en el input, la función handleChange actualizará el estado de formData con el
      * nuevo valor.
      */
     const handleChange = (event, name) => {
@@ -94,7 +92,7 @@ export const TransactionsProvider = ({children}) => {
 
     /**
      * Si no hay ningún objeto ethereum, avise al usuario para que se conecte a MetaMask. Si hay un objeto ethereum,
-     * solicite las cuentas del usuario y establezca la cuenta actual en la primera cuenta de la matriz.
+     * solicite las cuentas del usuario y establezca la cuenta actual como cuenta.
      */
     const connectWallet = async () => {
         try {
@@ -130,7 +128,7 @@ export const TransactionsProvider = ({children}) => {
     };
 
     /**
-     * Envía una transacción a la cadena de bloques y luego agrega la transacción a la cadena de bloques.
+     * Envía una transacción a la cadena de bloques y luego agrega la transacción.
      */
     const sendTransaction = async () => {
         try {
@@ -179,7 +177,7 @@ export const TransactionsProvider = ({children}) => {
         checkIfTransactionExists();
     }, []);
 
-    /* Este es un componente de React que usa el objeto TransactionContext para pasar datos a los componentes secundarios. */
+    /* Pasar datos a los componentes secundarios. */
     return (<TransactionContext.Provider
         value={{
             connectWallet,
