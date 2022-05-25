@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {HiMenuAlt4} from 'react-icons/hi';
 import {AiOutlineClose} from 'react-icons/ai';
+import { HashLink } from 'react-router-hash-link';
 
 import logo from '../assets/logo.png';
 
@@ -18,8 +19,8 @@ const Navbar = () => {
             <img src={logo} alt="logo" className="w-48 cursor-pointer"/>
         </div>
         <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-            {["Market", "Services", "Wallets", "Web 3.0"].map((item, index) => (
-                <NavBarItem key={item + index} title={item}/>))}
+            {["Wallet", "Services", "Transactions", "3.0"].map((item, index) => (
+                <NavBarItem key={item + index} title={item} href={item}/>))}
             <li
                 className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
                 <a href="https://github.com/MartiPuigGinebro/ethereum-exchange">Source</a>
@@ -37,7 +38,7 @@ const Navbar = () => {
                     <li className="text-xl w-full my-2">
                         <AiOutlineClose onClick={() => setToggleMenu(false)}/>
                     </li>
-                    {["Market", "Services", "Wallets", "Web 3.0"].map((item, index) => (
+                    {["Wallet", "Services", "Transactions", "3.0"].map((item, index) => (
                         <NavBarItem key={item + index} title={item} classProps="my-2 text-lg"/>))}
                 </ul>)}
         </div>
