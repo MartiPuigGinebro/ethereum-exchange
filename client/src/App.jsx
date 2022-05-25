@@ -7,14 +7,14 @@ import {Footer, Navbar, Services, Transactions, Welcome} from './components';
 const App = () => {
     return (
         <div className="min-h-screen gradient-bg">
-        <div>
-            <Navbar/>
-            <Welcome/>
+            <div>
+                <Navbar/>
+                <Welcome/>
+            </div>
+            <Services/>
+            <Transactions/>
+            <Footer/>
         </div>
-        <Services/>
-        <Transactions/>
-        <Footer/>
-    </div>
     )
 };
 

@@ -54,7 +54,7 @@ const Welcome = () => {
                         Send ETH <br/> across the web
                     </h1>
                     <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
-                        Enter the crypto world. Buy and sell with ETH easily on TDM.
+                        Enter the crypto world. Buy and sell with ETH easily on tdm.
                     </p>
                     {/* Si no hay una cuenta corriente, mostrar el botón para conectar la billetera. */}
                     {!currentAccount && (

@@ -54,12 +54,9 @@ export const TransactionsProvider = ({children}) => {
                 keyword: transaction.keyword,
                 value: parseInt(transaction.value._hex) / (10 ** 18),
             }));
-
-            console.log(structuredTransactions);
-
             setTransactions(structuredTransactions);
         } catch (error) {
-            console.error(error);
+            throw new Error(error);
         }
     };
 
@@ -80,13 +77,9 @@ export const TransactionsProvider = ({children}) => {
                 setCurrentAccount(accounts[0]);
 
                 getAllTransactions();
-            } else {
-                console.log('No accounts found');
             }
         } catch (error) {
-            console.log(error);
-
-            throw new Error('No ethereum object');
+            throw new Error(error);
         }
     };
 
@@ -104,9 +97,7 @@ export const TransactionsProvider = ({children}) => {
 
             setCurrentAccount(accounts[0]);
         } catch (error) {
-            console.log(error);
-
-            throw new Error('No ethereum object');
+            throw new Error(error);
         }
     };
 
@@ -121,9 +112,7 @@ export const TransactionsProvider = ({children}) => {
 
             window.localStorage.setItem('transactionCount', transactionCount);
         } catch (error) {
-            console.log(error);
-
-            throw new Error('No ethereum object');
+            throw new Error(error);
         }
     };
 
@@ -153,10 +142,8 @@ export const TransactionsProvider = ({children}) => {
             const transactionHash = await transactionContract.addToBlock(addressTo, parseEtherAmount, message, keyword);
 
             setIsLoading(true);
-            console.log(`Loading: ${transactionHash.hash}`);
             await transactionHash.wait();
             setIsLoading(false);
-            console.log(`Success: ${transactionHash.hash}`);
 
             const transactionCount = await transactionContract.getTransferCount();
 
@@ -164,9 +151,7 @@ export const TransactionsProvider = ({children}) => {
 
             window.location.reload();
         } catch (error) {
-            console.log(error);
-
-            throw new Error('No ethereum object');
+            throw new Error(error);
         }
     };
 
