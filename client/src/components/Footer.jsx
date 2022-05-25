@@ -1,3 +1,7 @@
+/**
+ * Creación del componente Footer.
+ * @returns Componente Footer.
+ */
 const Footer = () => {
     return (
         <div className="flex flex-col w-full lg:flex-row justify-center items-center pb-20 lg:pb-20 lg:pt-40">

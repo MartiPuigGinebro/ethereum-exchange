@@ -2,6 +2,9 @@ import {useEffect, useState} from 'react';
 
 const API_KEY = import.meta.env.VITE_GIPHY_API;
 
+/**
+ * Obtiene un gif de la API de Giphy en función de la palabra clave pasada
+ */
 const useFetch = ({keyword}) => {
     const [gifUrl, setGifUrl] = useState('');
 

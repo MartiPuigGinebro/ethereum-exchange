@@ -1,12 +1,19 @@
+/* Importación de la biblioteca ethers y el contrato ABI y dirección. */
 import React, {useEffect} from 'react';
 import {ethers} from 'ethers';
 
 import {contractABI, contractAddress} from '../utils/constants';
 
+/* Creación de un objeto de contexto que se puede usar para pasar datos a través del árbol de componentes sin tener que
+pasar accesorios manualmente en cada nivel. */
 export const TransactionContext = React.createContext();
 
 const {ethereum} = window;
 
+/**
+ * Devuelve una instancia del contrato que está conectado a la red Ethereum.
+ * @returns un objeto de contrato.
+ */
 const getEthereumContract = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
@@ -20,10 +27,18 @@ export const TransactionsProvider = ({children}) => {
     const [transactionCount, setTransactionCount] = React.useState(localStorage.getItem('transactionCount') || 0);
     const [transactions, setTransactions] = React.useState([]);
 
+    /**
+     * Cuando el usuario escribe en el campo de entrada, la función handleChange actualizará el estado de formData con el
+     * nuevo valor.
+     */
     const handleChange = (event, name) => {
         setFormData((prevState) => ({...prevState, [name]: event.target.value}));
     };
 
+    /**
+     * Obtiene todas las transacciones del contrato inteligente y luego establece el estado de las transacciones en
+     * structuredTransactions
+     */
     const getAllTransactions = async () => {
         try {
             if (!ethereum) {
@@ -50,6 +65,11 @@ export const TransactionsProvider = ({children}) => {
         }
     };
 
+    /**
+     * Si el usuario no está conectado a MetaMask, avísele para que se conecte. Si están conectados, obtenga la primera
+     * cuenta de la lista de cuentas y configúrela como la cuenta actual. Luego, obtenga todas las transacciones de la
+     * cuenta corriente.
+     */
     const checkIfWalletIsConnected = async () => {
         try {
             if (!ethereum) {
@@ -72,6 +92,10 @@ export const TransactionsProvider = ({children}) => {
         }
     };
 
+    /**
+     * Si no hay ningún objeto ethereum, avise al usuario para que se conecte a MetaMask. Si hay un objeto ethereum,
+     * solicite las cuentas del usuario y establezca la cuenta actual en la primera cuenta de la matriz.
+     */
     const connectWallet = async () => {
         try {
             if (!ethereum) {
@@ -88,6 +112,10 @@ export const TransactionsProvider = ({children}) => {
         }
     };
 
+    /**
+     * Obtiene el recuento de transacciones del contrato inteligente y lo almacena en el almacenamiento local del
+     * navegador.
+     */
     const checkIfTransactionExists = async () => {
         try {
             const transactionContract = getEthereumContract();
@@ -101,6 +129,9 @@ export const TransactionsProvider = ({children}) => {
         }
     };
 
+    /**
+     * Envía una transacción a la cadena de bloques y luego agrega la transacción a la cadena de bloques.
+     */
     const sendTransaction = async () => {
         try {
             if (!ethereum) {
@@ -141,13 +172,25 @@ export const TransactionsProvider = ({children}) => {
         }
     };
 
+    /* Este es un hook que se llama cuando se monta el componente. Se utiliza para verificar si el usuario está
+    conectado a MetaMask y si hay transacciones en el contrato inteligente. */
     useEffect(() => {
         checkIfWalletIsConnected();
         checkIfTransactionExists();
     }, []);
 
+    /* Este es un componente de React que usa el objeto TransactionContext para pasar datos a los componentes secundarios. */
     return (<TransactionContext.Provider
-        value={{connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction, transactions, isLoading}}>
+        value={{
+            connectWallet,
+            currentAccount,
+            formData,
+            setFormData,
+            handleChange,
+            sendTransaction,
+            transactions,
+            isLoading
+        }}>
         {children}
     </TransactionContext.Provider>);
 };

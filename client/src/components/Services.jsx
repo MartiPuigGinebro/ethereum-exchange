@@ -1,10 +1,11 @@
 import {BsShieldFillCheck} from "react-icons/bs";
 import {AiOutlinePercentage} from "react-icons/ai";
 import {BiTimeFive} from "react-icons/bi";
-import {SiTrustpilot} from "react-icons/si";
-import {SiHiveBlockchain} from "react-icons/si";
-import {SiEthereum} from "react-icons/si";
+import {SiEthereum, SiHiveBlockchain, SiTrustpilot} from "react-icons/si";
 
+/**
+ * Creación de un componente de tarjeta de servicio.
+ */
 const ServiceCard = ({color, title, icon, subtitle}) => (
     <div
         className="flex flex-row justify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
@@ -18,6 +19,9 @@ const ServiceCard = ({color, title, icon, subtitle}) => (
     </div>
 );
 
+/**
+ * Componente de servicios. Contiene una lista de tarjetas de servicios.
+ */
 const Services = () => {
     return (
         <div className="flex flex-col ml:flex-row w-full lg:pt-28 justify-center items-center ">

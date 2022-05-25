@@ -29,7 +29,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-/* white glassmorphism */
 .white-glassmorphism {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
@@ -81,7 +80,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-top: -20px;
     }
 
-    #services  {
+    #services {
         margin-bottom: 35px;
     }
 }

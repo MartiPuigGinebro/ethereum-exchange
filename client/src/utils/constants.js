@@ -1,3 +1,4 @@
+/* Importación de ABI y la dirección del contrato del archivo Transactions.json. */
 import abi from './Transactions.json';
 
 export const contractABI = abi.abi;
