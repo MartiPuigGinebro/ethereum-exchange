@@ -60,7 +60,6 @@ const Navbar = () => {
                             <HashLink smooth to="/#footer">Web 3.0</HashLink>
                         </li>
                     </ul>
-                    )}
                 </div>
             </nav>
         </BrowserRouter>
