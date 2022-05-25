@@ -2,11 +2,16 @@ import React, {useContext} from 'react';
 
 import {TransactionContext} from '../context/TransactionContext';
 
-import dummyData from "../utils/dummyData";
 import {shortenAddress} from "../utils/shortenAddress";
 import useFetch from "../hooks/useFetch";
 
+/**
+ * Componente que devuelve una tarjeta con un gif, una marca de tiempo y
+ * algunos detalles de la transacción.
+ * @returns Tarjeta de transacción.
+ */
 const TransactionCard = ({value, keyword, message, from, url, timestamp, to}) => {
+    /* Es un enlace personalizado que obtiene un gif de la API de Giphy. */
     const gifUrl = useFetch({keyword});
 
     return (
@@ -46,12 +51,14 @@ const Transactions = () => {
     const {currentAccount, transactions} = useContext(TransactionContext);
 
     return (
+        /* Muestra las últimas transacciones. */
         <div className="flex w-full justify-center items-center lg:pt-20 2xl:px-20 ">
             <div id="transactions" className="flex flex-col md:p-12 py-12 px-4">
                 {currentAccount ? (
                     <h3 className="text-white text-3xl text-center my-2">Latest transactions</h3>
                 ) : (
-                    <h3 className="text-white text-3xl text-center my-2">Connect your wallet to see your transactions </h3>
+                    <h3 className="text-white text-3xl text-center my-2">Connect your wallet to see your
+                        transactions </h3>
                 )
                 }
 
