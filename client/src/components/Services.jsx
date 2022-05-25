@@ -1,6 +1,9 @@
 import {BsShieldFillCheck} from "react-icons/bs";
 import {AiOutlinePercentage} from "react-icons/ai";
 import {BiTimeFive} from "react-icons/bi";
+import {SiTrustpilot} from "react-icons/si";
+import {SiHiveBlockchain} from "react-icons/si";
+import {SiEthereum} from "react-icons/si";
 
 const ServiceCard = ({color, title, icon, subtitle}) => (
     <div
@@ -17,32 +20,50 @@ const ServiceCard = ({color, title, icon, subtitle}) => (
 
 const Services = () => {
     return (
-        <div className="flex flex-col ml:flex-row w-full lg:pt-36 justify-center items-center ">
-            <div className="flex mf:flex-row flex-col items-center justify-between py-12 px-4">
+        <div className="flex flex-col ml:flex-row w-full lg:pt-28 justify-center items-center ">
+            <div id="services" className="flex mf:flex-row flex-col items-center justify-between py-12 px-4">
                 <div className="flex-1 flex flex-col items-start justify-start">
                     <h2 className="text-white text-3xl sm:text-5xl text-white">Services that we offer...
                         <br/>
-                         and keep improving</h2>
+                        and keep improving</h2>
                 </div>
             </div>
             <div className="flex-1 flex flex-col md:w-3/5">
                 <ServiceCard
-                    color="bg-[#2952E3]"
+                    color="bg-[#F84550]"
+                    title="Best Rates"
+                    icon={<AiOutlinePercentage fontSize={21} className="text-white"/>}
+                    subtitle="We offer the best market rates just for you and your business."
+                />
+                <ServiceCard
+                    color="bg-[#F845504C]"
                     title="Security Guaranteed"
                     icon={<BsShieldFillCheck fontSize={21} className="text-white"/>}
                     subtitle="Your data is safe with us. We use the latest security technologies to protect your data."
                 />
                 <ServiceCard
                     color="bg-[#8945F8]"
-                    title="Best Rates"
-                    icon={<AiOutlinePercentage fontSize={21} className="text-white"/>}
-                    subtitle="We offer the best market rates just for you and your business."
-                />
-                <ServiceCard
-                    color="bg-[#F84550]"
                     title="Fast and Easy"
                     icon={<BiTimeFive fontSize={21} className="text-white"/>}
                     subtitle="You only need to fill out the form and we will take care of the rest."
+                />
+                <ServiceCard
+                    color="bg-[#8945F84D]"
+                    title="Reliability"
+                    icon={<SiTrustpilot fontSize={21} className="text-white"/>}
+                    subtitle="We are reliable and we will always be there to help you."
+                />
+                <ServiceCard
+                    color="bg-[#2952E3]"
+                    title="Blockchain"
+                    icon={<SiHiveBlockchain fontSize={21} className="text-white"/>}
+                    subtitle="Our application is built on the blockchain. We are always up to date."
+                />
+                <ServiceCard
+                    color="bg-[#2952E34D]"
+                    title="Ethereum"
+                    icon={<SiEthereum fontSize={21} className="text-white"/>}
+                    subtitle="ETH is the most popular cryptocurrency in the world. We use it to make transactions."
                 />
             </div>
         </div>

@@ -71,18 +71,18 @@ input[type=number]::-webkit-outer-spin-button {
 @media only screen and (max-width: 600px) {
     #root > div > div > div > div > div.flex.flex-1.justify-start.flex-col.mf\:mr-20 > div {
         width: 99%;
+        background-color: rgba(41, 82, 227, 0.3);
     }
-
 
 }
 
 @media only screen and (max-width: 1025px) {
-    #root > div > div.flex.flex-col.ml\:flex-row.w-full.lg\:pt-36.justify-center.items-center > div.flex.mf\:flex-row.flex-col.items-center.justify-between.py-12.px-4 {
-        margin-top: -30px;
+    #services {
+        margin-top: -20px;
     }
 
-    #root > div > div.flex.flex-col.ml\:flex-row.w-full.lg\:pt-36.justify-center.items-center > div.flex.mf\:flex-row.flex-col.items-center.justify-between.py-12.px-4 > div > h2 {
-        margin-bottom: 20px;
+    #services  {
+        margin-bottom: 35px;
     }
 }
 
