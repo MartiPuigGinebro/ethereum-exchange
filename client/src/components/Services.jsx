@@ -24,7 +24,7 @@ const ServiceCard = ({color, title, icon, subtitle}) => (
  */
 const Services = () => {
     return (
-        <div className="flex flex-col ml:flex-row w-full lg:pt-28 justify-center items-center ">
+        <div className="flex flex-col ml:flex-row w-full lg:pt-32 justify-center items-center ">
             <div id="services" className="flex mf:flex-row flex-col items-center justify-between py-12 px-4">
                 <div className="flex-1 flex flex-col items-start justify-start">
                     <h2 className="text-white text-3xl sm:text-5xl text-white">Services that we offer...
