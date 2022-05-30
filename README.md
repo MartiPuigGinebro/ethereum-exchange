@@ -1,5 +1,12 @@
 # Introducció general.
 
+## Passos per crear projecte localment.
+
+1. Descarregar repositori.
+2. npm install per instal·lar les dependències necessàries.
+3. npm run dev crearà un live server al nostre local host.
+4. npm run build per crear un projecte optimitzat per producció.
+
 ## Objectiu i àmbit del projecte.
 
 La finalitat en aquest treball final era crear una aplicació completament des de zero, amb un front-end i un back-end diferenciats.
@@ -165,5 +172,3 @@ En general, el projecte ha estat molt satisfactori, i m&#39;ha ajudat a estar al
 # Comparativa entre les expectatives inicials i resultat final.
 
 El projecte ha estat més satisfactori del que esperava, ja que m&#39;he descobert amb problemes i he pogut resoldre&#39;ls, i això em fa sentir més confiat a l&#39;hora de fer projectes en el futur. A més, he après moltes coses noves i interessants.
-
-# URL: http://thedecentralizedmarket.online/
