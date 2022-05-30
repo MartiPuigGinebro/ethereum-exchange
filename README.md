@@ -1,6 +1,6 @@
 # Introducció general.
 
-## Passos per crear projecte localment.
+## Passos per crear projecte.
 
 1. Descarregar repositori.
 2. npm install per instal·lar les dependències necessàries.
