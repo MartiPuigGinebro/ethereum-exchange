@@ -3,9 +3,9 @@
 ## Passos per crear projecte.
 
 1. Descarregar repositori.
-2. npm install per instal·lar les dependències necessàries.
-3. npm run dev crearà un live server al nostre local host.
-4. npm run build per crear un projecte optimitzat per producció.
+2. **npm install** per instal·lar les dependències necessàries.
+3. **npm run dev** crearà un live server al nostre local host.
+4. **npm run build** per crear un projecte optimitzat per producció.
 
 ## Objectiu i àmbit del projecte.
 
