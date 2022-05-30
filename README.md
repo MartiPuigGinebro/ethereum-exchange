@@ -165,3 +165,5 @@ En general, el projecte ha estat molt satisfactori, i m&#39;ha ajudat a estar al
 # Comparativa entre les expectatives inicials i resultat final.
 
 El projecte ha estat més satisfactori del que esperava, ja que m&#39;he descobert amb problemes i he pogut resoldre&#39;ls, i això em fa sentir més confiat a l&#39;hora de fer projectes en el futur. A més, he après moltes coses noves i interessants.
+
+# URL: http://thedecentralizedmarket.online/
