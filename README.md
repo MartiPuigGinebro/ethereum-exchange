@@ -9,6 +9,7 @@
 - **npm run dev** crearà un live server al nostre local host.
 3. Per crear un projecte optimitzat per producció:
 - **npm run build**
+4. Domini creat i desplegat https://thedecentralizedmarket.online/
 
 ## Objectiu i àmbit del projecte.
 
